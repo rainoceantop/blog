@@ -56,21 +56,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+<link href="/blog/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.3.0" color="#222">
 
 
 
@@ -83,7 +83,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/blog/',
     scheme: 'Pisces',
     version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="生活不只眼前的田野，还有诗和远方的苟且">
-<meta name="keywords" content="Jesse的个人博客用于记录学习中遇到的事情">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jesse的个人博客">
-<meta property="og:url" content="http://yoursite.com/categories/sayHi/呀/index.html">
-<meta property="og:site_name" content="Jesse的个人博客">
-<meta property="og:description" content="生活不只眼前的田野，还有诗和远方的苟且">
+  <meta name="description" content="Matplotlib 是一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形 。通过 Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。开发者：John D. Hunter">
+<meta name="keywords" content="python,matplotlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matplotlib的使用">
+<meta property="og:url" content="https://github.io/rainoceantop/blog/2018/05/22/matplotlib的使用/index.html">
+<meta property="og:site_name" content="Jesse的博客">
+<meta property="og:description" content="Matplotlib 是一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形 。通过 Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。开发者：John D. Hunter">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-22T06:54:29.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jesse的个人博客">
-<meta name="twitter:description" content="生活不只眼前的田野，还有诗和远方的苟且">
+<meta name="twitter:title" content="matplotlib的使用">
+<meta name="twitter:description" content="Matplotlib 是一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形 。通过 Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。开发者：John D. Hunter">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/sayHi/呀/"/>
+  <link rel="canonical" href="https://github.io/rainoceantop/blog/2018/05/22/matplotlib的使用/"/>
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>分类: 呀 | Jesse的个人博客</title>
+  <title>matplotlib的使用 | Jesse的博客</title>
   
 
 
@@ -182,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -191,9 +192,9 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jesse的个人博客</span>
+        <span class="site-title">Jesse的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -220,7 +221,7 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
+    <a href="/blog/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
         
@@ -228,15 +229,15 @@
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
+    <a href="/blog/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
         
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
-    <a href="/categories/" rel="section">
+          <li class="menu-item menu-item-categories">
+    <a href="/blog/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
         
@@ -244,7 +245,7 @@
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
+    <a href="/blog/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
 
@@ -307,82 +308,440 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>呀<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.io/rainoceantop/blog/blog/2018/05/22/matplotlib的使用/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jesse">
+      <meta itemprop="description" content="生活不只眼前的田野，还有诗和远方的苟且">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jesse的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/05/21/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">matplotlib的使用
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-21T10:30:19+08:00"
-              content="2018-05-21" >
-          05-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-22 14:27:45 / 修改时间：14:54:29" itemprop="dateCreated datePublished" datetime="2018-05-22T14:27:45+08:00">2018-05-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/python/matplotlib/" itemprop="url" rel="index"><span itemprop="name">matplotlib</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Matplotlib 是一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形 。<br>通过 Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。<br>开发者：John D. Hunter</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>matplotlib 安装：pip install matplotlib</p>
+</blockquote>
+<ol>
+<li><h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><pre><code>导入 import matplotlib.pyplot as plt
+画线 plt.plot(x, y) plt.plot([1, 2, 3], [5, 7, 4], label=&apos;first graph&apos;)
+
+画日期线 plt.plot(x, y)
+
+画柱状图 plt.bar(x, y, label=&apos;first bar&apos;, color=&apos;#FFE4C4&apos;)
+
+画直方图(统计范围内符合的数量) plt.hist(x, y, histtype=&apos;bar&apos;, label=&apos;first histogram&apos;, rwidth=0.8)
+
+画分散图 plt.scatter(x, y, label=&apos;first scatter&apos;, marker=&apos;*&apos;, s=100)
+
+画堆栈图
+days = [1, 2, 3, 4, 5, 6, 7]
+sleeping = [8, 8, 8, 8, 8, 10, 10]
+eating = [2, 2, 2, 2, 2, 2, 2]
+working = [8, 8, 8, 8, 8, 2, 2]
+playing = [6, 6, 6, 6, 6, 10, 10]
+#python这个库不带堆栈图标记，自己创建唯标记
+plt.plot([], [], color=&apos;#7AC5CD&apos;, label=&apos;Sleeping&apos;, linewidth=5)
+plt.plot([], [], color=&apos;#FAEBD7&apos;, label=&apos;Eating&apos;, linewidth=5)
+plt.plot([], [], color=&apos;#9AFF9A&apos;, label=&apos;Working&apos;, linewidth=5)
+plt.plot([], [], color=&apos;#FFF68F&apos;, label=&apos;Playing&apos;, linewidth=5)
+plt.stackplot(days, sleeping, eating, working, playing, colors=[&apos;#7AC5CD&apos;, &apos;#FAEBD7&apos;, &apos;#9AFF9A&apos;, &apos;#FFF68F&apos;])
+
+画扇形图
+slices = [8, 2, 8, 6]
+activities = [&apos;sleeping&apos;, &apos;eating&apos;, &apos;working&apos;, &apos;playing&apos;]
+colors = [&apos;#7AC5CD&apos;, &apos;#FAEBD7&apos;, &apos;#9AFF9A&apos;, &apos;#FFF68F&apos;]
+plt.pie(slices, labels=activities, colors=colors, startangle=90, shadow=True, explode=[0, 0.1, 0, 0], autopct=&apos;%1.1f%%&apos;)
+
+颜色作为参数color传进画图函数里
+
+x-轴命名 plt.xlabel(&apos;quality&apos;)
+
+y-轴命名 plt.ylabel(&apos;amount&apos;)
+
+图表名称 plt.title(&apos;quality-amount statistics\ncheck it out&apos;)
+
+显示标记 plt.legend()
+
+显示 plt.show()
+</code></pre></li>
+<li><h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><pre><code>读取csv文件 
+
+import csv
+x = []
+y = []
+with open(&apos;example.txt&apos;, &apos;r&apos;) as csvfile:
+    plots = csv.reader(csvfile, delimiter=&apos;,&apos;)
+    for row in plots:
+        x.append(int(row[0]))
+        y.append(int(row[1]))
+
+plt.plot(x, y, label=&apos;loaded from file!&apos;)
+
+使用numpy读取txt文件
+
+# 正常情况下将返回一个二维矩阵，设置unpack=True后返回各列
+x, y = np.loadtxt(&apos;example.txt&apos;, delimiter=&apos;,&apos;, unpack=True)
+plt.plot(x, y, label=&apos;loaded from file!&apos;)
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><h3 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h3><pre><code>ax1.legend()
+leg = legend(loc=9, ncol=2, prop={&apos;size&apos;:11}) # loc定义位置参数，ncol表示显示列数，prop传递各种参数
+leg.get_frame().set_alpha(0.4) # 设置透明度
+
+#需要将图形变成网格并赋予一个变量的时候才能使用
+标签旋转：
+ax1 = plt.subplot2grid((3, 2), (2, 0), colspan=2)
+for label in ax1.xaxis.get_ticklabels():
+    label.set_rotation(90)
+显示网格： ax1.grid(True, color=&apos;green&apos;, linestyle=&apos;-&apos;, linewidth=&apos;2&apos;)
+
+调整图形位置：plt.subplots_adjust(bottom=0.45)
+
+改变x/y轴标签颜色：ax1.xaxis.label.set_color(&apos;c&apos;)  ax1.yaxis.label.set_color(&apos;r&apos;)
+
+设置x/y轴坐标间隔：ax1.set_xticks([]) ax1.xaxis.set_ticks([]) ax1.set_yticks([]) ax1.yaxis.set_ticks([])
+
+填充颜色：ax1.fill_between(thetime, price, price[0], facecolor=&quot;g&quot;, alpha=0.3)
+
+操作坐标轴：ax1.spines[&apos;left&apos;].set_color(&apos;g&apos;) ax1.spines[&apos;right&apos;].set_visible(False) ax1.spines[&apos;left&apos;].set_linewidth(5)
+
+修改坐标轴时间格式：ax1.xaxis.set_major_formatter(mdates.DateFormatter(&quot;%Y-%m-%d&quot;))
+
+修改坐标轴间隔：ax1.xaxis.set_major_locator(mticker.MaxNLocator(5))
+
+参数操作x/y轴：ax1.tick_params(axis=&apos;x&apos;, colors=&apos;g&apos;)
+
+操作水平/垂直线：ax1.axhline(price[0], color=&apos;k&apos;, linewidth=5) ax1.axvline(thetime[0], color=&apos;k&apos;, linewidth=5)
+
+限制坐标轴：ax2v.set_ylim(0, 5*max(y)) # 按原来的y轴的1/5缩放
+
+共享坐标轴：
+
+金融图（略）：from matplotlib.finance import candlestick_ohlc
+candlestick_ohlc(ax1, ohlc)
+
+使用样式：from matplotlib import style
+style.use(&apos;ggplot&apos;)
+style.use(&apos;fivethirtyeight&apos;)
+print(plt.style.available)
+
+嵌入文字： 
+font_dict = {&apos;family&apos;: &apos;serif&apos;, &apos;color&apos;: &apos;darkred&apos;, &apos;size&apos;: 20}
+ax1.text(float(xs[5]), float(ys[5]), &apos;555&apos;, fontdict=font_dict) (标签的类型一定要相同)
+
+获取文件位置：print(plt.__file__)
+</code></pre></li>
+<li><h3 id="同步更新数据"><a href="#同步更新数据" class="headerlink" title="同步更新数据"></a>同步更新数据</h3><pre><code>from matplotlib import animation
+
+fig = plt.figure()
+ax1 = fig.add_subplot(1, 1, 1)
+
+# 写一个获取数据的函数
+def animate(i):
+    graph_data = open(&apos;example.txt&apos;, &apos;r&apos;).read()
+    lines = graph_data.split(&apos;\n&apos;)
+    xs = []
+    ys = []
+    for line in lines:
+        if len(line) &gt; 1:
+            x, y = line.split(&apos;,&apos;)
+            xs.append(x)
+            ys.append(y)
+    ax1.clear()
+    ax1.plot([float(a) for a in xs], [float(b) for b in ys])
+
+# 每过一秒更新一次
+ani = animation.FuncAnimation(fig, animate, interval=1000)
+plt.show()
+
+箭头指向(x，y轴的标签类型要一致)：
+ax1.annotate(&apos;bad news&apos;, (float(xs[6]), float(ys[6])),
+            xytext=(0.8, 0.9), textcoords=&apos;axes fraction&apos;,
+            arrowprops=dict(facecolor=&apos;grey&apos;, color=&apos;grey&apos;))
+
+显示最后一个值：
+bbox_props = dict(boxstyle=&apos;round&apos;, fc=&apos;w&apos;, ec=&apos;k&apos;, lw=1)
+ax1.annotate(ys[-1], (float(xs[-1]), float(ys[-1])),
+            xytext=(float(xs[-1]), float(ys[-1])),
+            bbox=bbox_props)
+</code></pre></li>
+</ol>
+<ol start="5">
+<li><h3 id="分布式格局-使用时添加的标签，标题等要对应在每个图形的上-下面"><a href="#分布式格局-使用时添加的标签，标题等要对应在每个图形的上-下面" class="headerlink" title="分布式格局(使用时添加的标签，标题等要对应在每个图形的上/下面)"></a>分布式格局(使用时添加的标签，标题等要对应在每个图形的上/下面)</h3><pre><code># 第一个数字（参数）为分割行数，第二个为分割列数，第三个为第几个网格作为图形展示
+ax1 = fig.add_subplot(221) # 两行两列选第一个
+ax2 = fig.add_subplot(222, sharex=ax1) # 两行两列选第二个，共享ax1的x坐标轴
+ax2v = ax2.twinx() # 共用x坐标轴
+ax3 = fig.add_subplot(212) # 两行一列选第二个
+
+# 图形被分割成3行，2列的网格，后面的plot的位置在第三行第一列（默认第一行/列为0，左上角向下延伸）
+plt.subplot2grid((3, 2), (2, 0), colspan=2).plot([0, 1, 2, 3], [10, 20, 30, 15])
+</code></pre></li>
+<li><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code>地图 Basemap
+
+3D 
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# 设置三维坐标
+fig = plt.figure()
+ax = Axes3D(fig)
+
+# 生成数据
+x = np.linspace(-5, 5, 200)
+y = np.linspace(-5, 5, 200)
+X, Y = np.meshgrid(x, y)  # XY平面的网格数据
+Z = (1 - X / 2 + X ** 7 + Y ** 5) * np.exp(-X ** 2 - Y ** 2)
+
+# 画3d图
+ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=plt.cm.jet)
+# ax.plot_surface(X,Y,z,rstride=1,cstride=1,cmap=plt.get_cmap(&apos;rainbow&apos;))
+# 等高线图
+ax.contourf(X, Y, Z, zdir=&apos;z&apos;, offset=-2, cmap=&apos;rainbow&apos;)  # zdir= x/y/x 轴的等高线 offset=等高线的位置
+
+plt.show()  
+
+正确的matplotlib时间格式：
+① 数字类型：20171218
+    1.用strpdate2num创建转换器：converter = mdates.strpdate2num(&quot;%Y%m%d&quot;)
+    2.将数组里面的所有值用该转换器转换重新赋值：x = [converter(i) for i in x]
+    3.用plot_date显示
+② 时间戳类型：
+    1.用np创建转换器：converter = np.vectorize(datetime.datetime.fromtimestamp)
+    2.转换x：x = converter(x)
+
+保存图片：fig.savefig(&apos;test.png&apos;, facecolor=fig.get_facecolor())
+</code></pre></li>
+</ol>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果文章对你有用，买我杯咖啡如何？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechatpay.png" alt="Jesse 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Jesse 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/python/" rel="tag"># python</a>
+          
+            <a href="/blog/tags/matplotlib/" rel="tag"># matplotlib</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/05/22/pandas的使用/" rel="next" title="pandas的使用">
+                <i class="fa fa-chevron-left"></i> pandas的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -403,13 +762,22 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
+                src="/blog/images/avatar.jpg"
                 alt="Jesse" />
             
               <p class="site-author-name" itemprop="name">Jesse</p>
@@ -421,9 +789,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -433,7 +801,7 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  <a href="/blog/categories/index.html">
                     
                     
                       
@@ -442,7 +810,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -452,14 +826,22 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
+                  <a href="/blog/tags/index.html">
                     
                     
                       
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -485,6 +867,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#画图"><span class="nav-number">1.</span> <span class="nav-text">画图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取文件"><span class="nav-number">2.</span> <span class="nav-text">读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义"><span class="nav-number">3.</span> <span class="nav-text">自定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步更新数据"><span class="nav-number">4.</span> <span class="nav-text">同步更新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式格局-使用时添加的标签，标题等要对应在每个图形的上-下面"><span class="nav-number">5.</span> <span class="nav-text">分布式格局(使用时添加的标签，标题等要对应在每个图形的上/下面)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -593,45 +991,49 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.3.0"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -675,7 +1077,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "/blog/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
