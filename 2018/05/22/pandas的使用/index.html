@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Jesse的博客">
 <meta property="og:description" content="Pandas是python的一个数据分析包，最初由就职于AQR Capital Management的Wes McKinney于2008年4月开发，并于2009年底开源出来，目前由专注于Python数据包开发的PyData开发team继续开发和维护，属于PyData项目的一部分。Pandas最初被作为金融数据分析工具而开发出来，因此，pandas为时间序列分析提供了很好的支持。 Pandas的名">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T06:32:25.819Z">
+<meta property="og:updated_time" content="2018-05-22T07:27:52.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas的使用">
 <meta name="twitter:description" content="Pandas是python的一个数据分析包，最初由就职于AQR Capital Management的Wes McKinney于2008年4月开发，并于2009年底开源出来，目前由专注于Python数据包开发的PyData开发team继续开发和维护，属于PyData项目的一部分。Pandas最初被作为金融数据分析工具而开发出来，因此，pandas为时间序列分析提供了很好的支持。 Pandas的名">
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2018-05-22 13:29:26 / 修改时间：14:32:25" itemprop="dateCreated datePublished" datetime="2018-05-22T13:29:26+08:00">2018-05-22</time>
+              <time title="创建时间：2018-05-22 13:29:26 / 修改时间：15:27:52" itemprop="dateCreated datePublished" datetime="2018-05-22T13:29:26+08:00">2018-05-22</time>
             
 
             
@@ -446,13 +446,22 @@
 </blockquote>
 <a id="more"></a>
 <ol>
-<li><h3 id="创建序列"><a href="#创建序列" class="headerlink" title="创建序列"></a>创建序列</h3><pre><code>s = pd.Series([1, 3, 6, np.nan, 44, 1]) # 打印的时候会显示下标索引，默认类型float64或float32
-</code></pre></li>
-<li><h3 id="创建日期范围数组"><a href="#创建日期范围数组" class="headerlink" title="创建日期范围数组"></a>创建日期范围数组</h3><pre><code>dates = pd.date_range(&apos;20171106&apos;, periods=7) # 7天的日期数组
+<li><h3 id="创建序列"><a href="#创建序列" class="headerlink" title="创建序列"></a>创建序列</h3></li>
+</ol>
+<hr>
+<pre><code>s = pd.Series([1, 3, 6, np.nan, 44, 1]) # 打印的时候会显示下标索引，默认类型float64或float32
+</code></pre><ol start="2">
+<li><h3 id="创建日期范围数组"><a href="#创建日期范围数组" class="headerlink" title="创建日期范围数组"></a>创建日期范围数组</h3></li>
+</ol>
+<hr>
+<pre><code>dates = pd.date_range(&apos;20171106&apos;, periods=7) # 7天的日期数组
 pd.Timestamp(&apos;20171106&apos;) # 创建单个时间
 </code></pre><!-- more -->
-</li>
-<li><h3 id="创建数据表格"><a href="#创建数据表格" class="headerlink" title="创建数据表格"></a>创建数据表格</h3><pre><code># index为行的索引，column为列的索引，如不指定，行和列默认0开始索引
+<ol start="3">
+<li><h3 id="创建数据表格及表格操作"><a href="#创建数据表格及表格操作" class="headerlink" title="创建数据表格及表格操作"></a>创建数据表格及表格操作</h3></li>
+</ol>
+<hr>
+<pre><code># index为行的索引，column为列的索引，如不指定，行和列默认0开始索引
 df = pd.DataFrame(np.random.randn(7, 4), index=dates, columns=[&apos;r1&apos;, &apos;r2&apos;, &apos;r3&apos;, &apos;r4&apos;]) 
 df2 = pd.DataFrame({
 &apos;A&apos;: 1.,
@@ -485,22 +494,29 @@ df2 = pd.DataFrame({
 
 # 根据boolean索引 boolean indexing
 用判断的方式进行筛选：df[df.r3 &gt; 1]
-</code></pre></li>
-</ol>
-<ul>
-<li><h4 id="修改表格数据"><a href="#修改表格数据" class="headerlink" title="修改表格数据"></a>修改表格数据</h4><pre><code>df.iloc[2, 2] = 11
+</code></pre><ul>
+<li><h4 id="修改表格数据"><a href="#修改表格数据" class="headerlink" title="修改表格数据"></a>修改表格数据</h4></li>
+</ul>
+<hr>
+<pre><code>df.iloc[2, 2] = 11
 df.loc[dates[0], &apos;r3&apos;] = 11
 df.r1[df.r1 &gt; 1] = 0
 添加列：df[&apos;r5&apos;] = np.nan
-</code></pre></li>
-<li><h4 id="处理表格数据"><a href="#处理表格数据" class="headerlink" title="处理表格数据"></a>处理表格数据</h4><pre><code># 当how等于any的时候，只要包含一个nan的，就删除，如果改为all，则需要行内所有值都为nan的时候才删除
+</code></pre><ul>
+<li><h4 id="处理表格数据"><a href="#处理表格数据" class="headerlink" title="处理表格数据"></a>处理表格数据</h4></li>
+</ul>
+<hr>
+<pre><code># 当how等于any的时候，只要包含一个nan的，就删除，如果改为all，则需要行内所有值都为nan的时候才删除
 删除包含nan的表格的行：df.dropna(axis=0, how=&apos;any&apos;) # how={&apos;all&apos;, &apos;any&apos;}
 删除包含nan的表格的列：df.dropna(axis=1, how=&apos;any&apos;)
 填充包含nan的表格的数据：df.fillna(value=0)
 判断表格的数据是否为nan：df.isnull()
 判断表格至少存在一个nan丢失数据：np.any(df.isnull())
-</code></pre></li>
-<li><h4 id="合并表格"><a href="#合并表格" class="headerlink" title="合并表格"></a>合并表格</h4><pre><code>df1 = pd.DataFrame(np.ones((3, 4)) * 0, columns=[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;])
+</code></pre><ul>
+<li><h4 id="合并表格"><a href="#合并表格" class="headerlink" title="合并表格"></a>合并表格</h4></li>
+</ul>
+<hr>
+<pre><code>df1 = pd.DataFrame(np.ones((3, 4)) * 0, columns=[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;])
 df2 = pd.DataFrame(np.ones((3, 4)) * 1, columns=[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;])
 df3 = pd.DataFrame(np.ones((3, 4)) * 2, columns=[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;])
 # ingnore_index=True表示忽略原来的索引，用数字有序的索引替代
@@ -518,20 +534,22 @@ pd.concat([df1, df2, df3], join_axes=[df1.index], axis=1, ignore_index=True)
 多个column进行合并：pd.merge(df1, df2, on=[&apos;key&apos;, &apos;key1&apos;], how=&apos;inner&apos;) # how默认为inner，共有四种选择【&apos;inner&apos;,&apos;outer&apos;,&apos;left&apos;,&apos;right&apos;】
 # left_index 和 right_index默认为none，设置为true之后将改变合并方式，从根据column合并换为行标签合并
 根据行标签进行合并：pd.merge(df1, df2, left_index=True, right_index=True, indicator=True)
-</code></pre></li>
-</ul>
-<ol start="4">
-<li><h3 id="生成图表"><a href="#生成图表" class="headerlink" title="生成图表"></a>生成图表</h3><pre><code>import matplotlib.pyplot as plt
+</code></pre><ol start="4">
+<li><h3 id="生成图表"><a href="#生成图表" class="headerlink" title="生成图表"></a>生成图表</h3></li>
+</ol>
+<hr>
+<pre><code>import matplotlib.pyplot as plt
 data = pd.DataFrame(np.random.randn(1000, 4), columns=[&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;])
 data = data.cumsum()
 data.plot()
 data.plot.scatter(x=&apos;A&apos;, y=&apos;B&apos;)
-</code></pre></li>
-<li><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code>读取csv文件：data = pd.read_csv(&apos;test.csv&apos;)
-存储文件：data.to_pickle(&apos;test.pkl&apos;)                        
-</code></pre></li>
+</code></pre><ol start="5">
+<li><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3></li>
 </ol>
-
+<hr>
+<pre><code>读取csv文件：data = pd.read_csv(&apos;test.csv&apos;)
+存储文件：data.to_pickle(&apos;test.pkl&apos;)                        
+</code></pre>
       
     </div>
 
@@ -771,7 +789,7 @@ data.plot.scatter(x=&apos;A&apos;, y=&apos;B&apos;)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建序列"><span class="nav-number">1.</span> <span class="nav-text">创建序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建日期范围数组"><span class="nav-number">2.</span> <span class="nav-text">创建日期范围数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表格"><span class="nav-number">3.</span> <span class="nav-text">创建数据表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表格数据"><span class="nav-number">3.1.</span> <span class="nav-text">修改表格数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理表格数据"><span class="nav-number">3.2.</span> <span class="nav-text">处理表格数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并表格"><span class="nav-number">3.3.</span> <span class="nav-text">合并表格</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成图表"><span class="nav-number">4.</span> <span class="nav-text">生成图表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建序列"><span class="nav-number">1.</span> <span class="nav-text">创建序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建日期范围数组"><span class="nav-number">2.</span> <span class="nav-text">创建日期范围数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表格及表格操作"><span class="nav-number">3.</span> <span class="nav-text">创建数据表格及表格操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表格数据"><span class="nav-number">3.1.</span> <span class="nav-text">修改表格数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理表格数据"><span class="nav-number">3.2.</span> <span class="nav-text">处理表格数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并表格"><span class="nav-number">3.3.</span> <span class="nav-text">合并表格</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成图表"><span class="nav-number">4.</span> <span class="nav-text">生成图表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>

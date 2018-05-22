@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Jesse的博客">
 <meta property="og:description" content="NumPy 是一个 Python 包。 它代表 “Numeric Python”。 它是一个由多维数组对象和用于处理数组的例程集合组成的库。Numeric，即 NumPy 的前身，是由 Jim Hugunin 开发的。 也开发了另一个包 Numarray ，它拥有一些额外的功能。 2005年，Travis Oliphant 通过将 Numarray 的功能集成到 Numeric 包中来创建 Nu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T06:12:46.144Z">
+<meta property="og:updated_time" content="2018-05-22T07:28:54.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="numpy的使用">
 <meta name="twitter:description" content="NumPy 是一个 Python 包。 它代表 “Numeric Python”。 它是一个由多维数组对象和用于处理数组的例程集合组成的库。Numeric，即 NumPy 的前身，是由 Jim Hugunin 开发的。 也开发了另一个包 Numarray ，它拥有一些额外的功能。 2005年，Travis Oliphant 通过将 Numarray 的功能集成到 Numeric 包中来创建 Nu">
@@ -370,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2018-05-22 11:33:20 / 修改时间：14:12:46" itemprop="dateCreated datePublished" datetime="2018-05-22T11:33:20+08:00">2018-05-22</time>
+              <time title="创建时间：2018-05-22 11:33:20 / 修改时间：15:28:54" itemprop="dateCreated datePublished" datetime="2018-05-22T11:33:20+08:00">2018-05-22</time>
             
 
             
@@ -446,7 +446,10 @@
 </blockquote>
 <a id="more"></a>
 <ol>
-<li><h3 id="创建数组-b-np-array"><a href="#创建数组-b-np-array" class="headerlink" title="创建数组 b = np.array([])"></a>创建数组 <code>b = np.array([])</code></h3><pre><code>将list a转成numpy数组 array = np.array(a)
+<li><h3 id="创建数组-b-np-array"><a href="#创建数组-b-np-array" class="headerlink" title="创建数组 b = np.array([])"></a>创建数组 <code>b = np.array([])</code></h3></li>
+</ol>
+<hr>
+<pre><code>将list a转成numpy数组 array = np.array(a)
 定义numpy数组类型（位数越小，所占用的空间越小）
 array = np.array([[1, 2, 3], [4, 5, 6]], dtype=np.int64)
 将numpy数组转成list a = array.tolist()
@@ -465,8 +468,11 @@ array = np.linspace(0, 10, 6).reshape((2, 3))
 获取数组的形状（行列数）print(array.shape)
 获取数组的元素总和 print(array.size)
 获取数组的类型 print(array.dtype)
-</code></pre></li>
-<li><h3 id="数组的运算"><a href="#数组的运算" class="headerlink" title="数组的运算"></a>数组的运算</h3><pre><code>a = np.array([10, 20, 30, 40])
+</code></pre><ol start="2">
+<li><h3 id="数组的运算"><a href="#数组的运算" class="headerlink" title="数组的运算"></a>数组的运算</h3></li>
+</ol>
+<hr>
+<pre><code>a = np.array([10, 20, 30, 40])
 b = np.arange(4)
 
 加法运算：c = a + b
@@ -507,8 +513,11 @@ a.flatten() # flatten()为功能函数，直接将二维数组抹平，但如果
 限定最大最小值（所有超过范围的都取最大或最小值）：a.clip(10, 20) 或者 np.clip(a, 10, 20)
 在行上面加一个维度：a[np.newaxis, :]
 在列上面加一个维度：a[:, np.newaxis]
-</code></pre></li>
-<li><h3 id="数组的合并"><a href="#数组的合并" class="headerlink" title="数组的合并"></a>数组的合并</h3><pre><code>A = np.array([[1, 1, 1], [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]])
+</code></pre><ol start="3">
+<li><h3 id="数组的合并"><a href="#数组的合并" class="headerlink" title="数组的合并"></a>数组的合并</h3></li>
+</ol>
+<hr>
+<pre><code>A = np.array([[1, 1, 1], [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]])
 B = np.array([[2, 2, 2], [&apos;d&apos;, &apos;e&apos;, &apos;f&apos;]])
 
 垂直合并
@@ -517,8 +526,11 @@ np.vstack((A, B)) # 每个数组每一行每一行地装上去
 np.hstack((A, B)) # 每个数组同一行先合并再装上去
 指定维度的合并
 np.concatenate((A, B), axis=0) # 一维数组axis只能为0
-</code></pre></li>
-<li><h3 id="数组的分割"><a href="#数组的分割" class="headerlink" title="数组的分割"></a>数组的分割</h3><pre><code>A = np.arange(12).reshape((3, 4))
+</code></pre><ol start="4">
+<li><h3 id="数组的分割"><a href="#数组的分割" class="headerlink" title="数组的分割"></a>数组的分割</h3></li>
+</ol>
+<hr>
+<pre><code>A = np.arange(12).reshape((3, 4))
 
 对等分割行
 np.split(A, 3, axis=0) 或者 np.vsplit(A, 3)
@@ -528,8 +540,11 @@ np.split(A, 2, axis=1) 或者 np.hsplit(A, 2)
 np.array_split(A, 2, axis=0)
 不等分割列
 np.array_split(A, 3, axis=1)
-</code></pre></li>
-<li><h3 id="二维数组的索引"><a href="#二维数组的索引" class="headerlink" title="二维数组的索引"></a>二维数组的索引</h3><pre><code>普通索引： a[2][0]
+</code></pre><ol start="5">
+<li><h3 id="二维数组的索引"><a href="#二维数组的索引" class="headerlink" title="二维数组的索引"></a>二维数组的索引</h3></li>
+</ol>
+<hr>
+<pre><code>普通索引： a[2][0]
 同一中括号索引： a[2, 0]
 切片索引
 a[2, :] # 第三行所有数
@@ -546,30 +561,40 @@ for column in a.T:
 将数组抹平后迭代
 for item in a.flat:
     print(item)
-</code></pre></li>
-<li><h3 id="二维数组的运算："><a href="#二维数组的运算：" class="headerlink" title="二维数组的运算："></a>二维数组的运算：</h3><pre><code>a = np.array([[0, 2],[1, 3]])
+</code></pre><ol start="6">
+<li><h3 id="二维数组的运算："><a href="#二维数组的运算：" class="headerlink" title="二维数组的运算："></a>二维数组的运算：</h3></li>
+</ol>
+<hr>
+<pre><code>a = np.array([[0, 2],[1, 3]])
 b = np.arange(8).reshape((2, 4))
 
 普通乘法： c = a * b
 矩阵乘法： d = np.dot(a, b) 或者 d = a.dot(b)
-</code></pre></li>
-<li><h3 id="数组中的复制："><a href="#数组中的复制：" class="headerlink" title="数组中的复制："></a>数组中的复制：</h3><pre><code>a = np.arange(12)
+</code></pre><ol start="7">
+<li><h3 id="数组中的复制："><a href="#数组中的复制：" class="headerlink" title="数组中的复制："></a>数组中的复制：</h3></li>
+</ol>
+<hr>
+<pre><code>a = np.arange(12)
 
 浅复制（改变数组a或b的元素的值，其它的跟着改变）
 b = a # b是a，指向同一个物理位置
 深复制（改变数组a或b的元素的值，其它的不改变）
 b = a.copy() # b不是a，分别享有各自的物理位置
-</code></pre></li>
-<li><h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3><pre><code>创建一个0~1随机数构成的2行4列的数组： a = np.random.random((2, 4))
+</code></pre><ol start="8">
+<li><h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3></li>
+</ol>
+<hr>
+<pre><code>创建一个0~1随机数构成的2行4列的数组： a = np.random.random((2, 4))
 生成6个随机数： np.random.rand(6)
 返回一个具有正在分布的随机数构成的6行4列的数组： np.random.randn(6, 4)
-</code></pre></li>
-<li><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code>函数装配vectorize()使得其函数可以应用在numpy数组上 
+</code></pre><ol start="9">
+<li><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3></li>
+</ol>
+<hr>
+<pre><code>函数装配vectorize()使得其函数可以应用在numpy数组上 
 lencount = np.vectorize(lambda x: len(x))
 np.nan： 生成一个类型为float的NaN的空字符
-</code></pre></li>
-</ol>
-
+</code></pre>
       
     </div>
 
