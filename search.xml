@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[manjaro安装完的基本设置]]></title>
+    <url>%2Fblog%2F2018%2F05%2F29%2Fmanjaro%E5%AE%89%E8%A3%85%E5%AE%8C%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[Manjaro是一款基于Arch Linux、对用户友好、全球排名第1的Linux发行版。 针对ArchLinux的“硬伤”、对新手不友好的“弱点”，Manjaro采用了图形化安装程序，使安装过程非常轻松、人性化，同时也把安装ArchLinux后的大量繁琐工作——安装配置显卡驱动、AUR、X服务、桌面环境、中文输入法、Flash插件、音频解码器、显示管理器等——全都做到位了，为新手解决了大麻烦，为高级用户节省了大量时间。 manjaro中文网 manjaro官方网站 配置国内源打开manjaro终端命令行，键入如下两行代码12sudo pacman-mirrors -gb testing -c China //选择中国源并更新sudo pacman -Syyu //更新系统 升级软件在配置完国内源后，打开软件管理器，里面的待更新的软件根据个人喜好就可以更新了（强迫症表示要全部更新到最新版本才行~） 配置拼音输入法打开软件管理器，搜索pinyin，下载google拼音。通过软件管理器下载输入法会同时下载相关依赖，如fcitx。还是很人性化的。 值得注意的是，下载完必须重启才能使用拼音 如果发现配置输入法无法显示界面，打开manjaro终端，键入下面命令后再重试12sudo pacman -S fcitx-imsudo pacman -S fcitx-configtool 时间调整如果你使用的是双系统（manjaro和windows并存），那么你可能会遇到时间比你所在时区的正常时间快了8个小时。这是因为linux和windows看待系统硬件的方式是不一样的 Windows把系统硬件时间当作本地时间(local time),即操作系统中显示的时间跟BIOS中显示的时间是一样的。 Linux/Unix/Mac把硬件时间当作UTC，操作系统中显示的时间是硬件时间经过换算得来的，比如说北京时间是GMT+8，则系统中显示时间是硬件时间+8。 解决方法其实也很简单，只要进入windows系统。通过右击时间显示区，打开日期和时间，修改时区为(UTC)协调世界时即可 win10系统下关机自动重启进入电源选项（控制面板或左下角搜索栏搜索电源）→选择电源按钮的功能→更改当前不可用的设置→取消勾选“启用快速启动”功能 即可]]></content>
+      <categories>
+        <category>linux</category>
+        <category>manjaro基本设置</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python多线程与多进程]]></title>
     <url>%2Fblog%2F2018%2F05%2F22%2Fpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[主要列举python使用多线程的方法 python的GIL锁的介绍 python的多进程的方法 python多线程 导入：import threading as th 当前激活数：threading.active_count() 枚举当前激活线程：threading.enumerate() 当前主运行线程：threading.current_thread() 创建队列：q = queue.Queue 创建线程，指定工作函数，并命名thread1 = threading.Thread(target=thread_job, name=&quot;T1&quot;)thread1.start() 传参t = threading.Thread(target=job, args=(data[i], q)) join 主线程调用该线程，并且等到其完成以后才能接着实行。此处join的原理就是依次检验线程池中的线程是否结束，没有结束就阻塞直到线程结束，如果结束则跳转执行下一个线程的join函数thread1.join() Lock锁 在方法开始前，使用lock.acquire取得锁，结束后使用lock.release解除锁，放入同一线程的锁必须是同一把锁才能锁住，否则还是会交替运行 1234567def job1(): global lock lock.acquire() for i in range(10): print(&quot;T1 is running&quot;) time.sleep(.5) lock.release() GIL:全局解释器锁 协同式多任务处理当一项任务比如网络 I/O启动，而在长的或不确定的时间，没有运行任何 Python 代码的需要，一个线程便会让出GIL，从而其他线程可以获取 GIL 而运行 Python。这种礼貌行为称为协同式多任务处理，它允许并发；多个线程同时等待不同事件。两个线程在同一时刻只能有一个执行 Python ，但一旦线程开始连接，它就会放弃 GIL ，这样其他线程就可以运行。这意味着两个线程可以并发等待套接字连接，这是一件好事。在同样的时间内它们可以做更多的工作。 python多进程 导入：import multiprocessing as mp 创建跟线程一样 创建进程锁和线程一样 创建队列：q = mp.Queue() 创建进程池：pool = mp.Pool() # 默认火力全开，指定核数mp.Pool(processes=3) 指定工作：res = pool.map(job, range(100)) # 一次性分配给多个线程工作，第二个参数作为参数传进第一个参数所代表的函数内res = p1.apply_async(job, (2,)) # 一次只能分配给一个线程 创建共享内存： 12v = mp.Value(&quot;i&quot;, 0)a = mp.Array(&quot;i&quot;, [0, 1, 2, 3])]]></content>
